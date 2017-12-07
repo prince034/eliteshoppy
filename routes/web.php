@@ -55,11 +55,24 @@ Route::group(array('domain' => env('APP_HOST')), function() {
 });
 
 Route::group(array('domain' => 'admin.'.env('APP_HOST')), function() {
-    Route::get('/', function(){
-        return view('admin.auth.login');
-    });
-    Route::post('login','Admin\Auth\AdminLoginController@login');
-    Route::get('/dashboard', function(){
-        return view('admin.dashboard');
-    });
+
+    Route::get('/', function () {
+            return view('admin.auth.login');
+    })->middleware('admin_rdrct');
+
+    Route::post('login', 'Admin\Auth\AdminLoginController@login');
+
+    Route::group(['middleware' => 'admin_auth'], function () {
+
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');
+        });
+
+        Route::get('/user', function () {
+            return view('admin.user');
+        })->middleware('admin_auth');
+
+        Route::get('/logout', 'Admin\Auth\AdminLoginController@logout');
+
+        });
 });

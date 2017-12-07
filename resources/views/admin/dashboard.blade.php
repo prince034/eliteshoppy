@@ -18,7 +18,7 @@
     <link href="admin/css/animate.min.css" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+    <link href="admin/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
@@ -52,49 +52,49 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="dashboard">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="user">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="table">
                         <i class="pe-7s-note2"></i>
                         <p>Table List</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="typography">
                         <i class="pe-7s-news-paper"></i>
                         <p>Typography</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="icons">
                         <i class="pe-7s-science"></i>
                         <p>Icons</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="maps">
                         <i class="pe-7s-map-marker"></i>
                         <p>Maps</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="notifications">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
 				<li class="active-pro">
-                    <a href="upgrade.html">
+                    <a href="upgrade">
                         <i class="pe-7s-rocket"></i>
                         <p>Upgrade to PRO</p>
                     </a>
@@ -113,7 +113,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="#">Welcome
+                        @if(auth()->guard('admin')->check())
+                            {{auth()->guard('admin')->user()->name}}
+                        @endif
+
+
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
@@ -173,7 +179,7 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/logout">
                                 <p>Log out</p>
                             </a>
                         </li>

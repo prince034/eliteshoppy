@@ -34,17 +34,22 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="/login" method="post">
+        {{csrf_field()}}
         <h2 class="text-center">Log in</h2>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+            <input type="email" class="form-control" name="email" placeholder="Username" required="required">
         </div>
+
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
+        @foreach ($errors->get('email') as $message)
+            <span style="color: red">*{{$message}}</span>
+        @endforeach <br/><br/>
         <div class="clearfix">
             <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
             <a href="#" class="pull-right">Forgot Password?</a>
