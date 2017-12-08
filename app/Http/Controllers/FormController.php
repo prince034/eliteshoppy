@@ -17,7 +17,6 @@ class FormController extends Controller
         ],['name.required'=>'I :attribute am required i m name']);
 
 
-
         $name = $request->input('name');
         $city = $request->input('city');
         $data = DB::table('students')->where('id','>',1)->get();

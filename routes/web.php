@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::group(array('domain' => env('APP_HOST')), function() {
 
 
@@ -48,7 +52,7 @@ Route::group(array('domain' => env('APP_HOST')), function() {
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('login', 'Auth\LoginController@login');
     Route::get('logout', 'Auth\LoginController@logout');
-
+    route::post('forgotPassword','Auth\ForgotPasswordController@sendResetLinkEmail');
     Route::get('admin', 'admin\AdminController@dashboard');
 
 
@@ -76,3 +80,7 @@ Route::group(array('domain' => 'admin.'.env('APP_HOST')), function() {
 
         });
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
