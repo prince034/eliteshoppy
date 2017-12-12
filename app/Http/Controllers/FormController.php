@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 class FormController extends Controller
 {
     public function dataView(Request $request){
+
         DB::enableQueryLog();
 
         $validateData=$request->validate([
@@ -19,12 +20,15 @@ class FormController extends Controller
 
         $name = $request->input('name');
         $city = $request->input('city');
+
+        $request->session()->put('name', $name);
+        $value = session()->get('name', 'default');
         $data = DB::table('students')->where('id','>',1)->get();
         //dd($data);
 
         //dd(DB::getQueryLog());
         //DB::table('students')->insert(['stud_name' => 'spiderman', 'stud_city'=>'delhi', 'stud_class'=>'XII', 'age'=>15]);
-        return view('view', ['success'=>true,'name'=>$name,'city'=>$city, 'data'=>$data]);
+        return view('view', ['success'=>true,'name'=>$name,'city'=>$city, 'data'=>$data,'value'=>$value]);
     }
 
 
@@ -51,7 +55,10 @@ if($query){
 
     public function getPersons(){
         $data=Utils::MongoDB()->collection('persons')->where('id','=',1)->first();
-        return view('persons',['data'=>$data]);
+
+
+
+        return view('persons',['data'=>$data,'value'=>$value]);
     }
 
 

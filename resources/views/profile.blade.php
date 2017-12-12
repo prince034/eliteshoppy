@@ -8,9 +8,17 @@
 {{--@if ($success==true)--}}
     {{--<script>alert('{{'records inserted successfully'}}');</script>--}}
 {{--@endif--}}
-<h2>id is {{$id}}</h2>
 
-{{$data->stud_name}}
+@if($id){
+<h2>id is {{$id}}</h2>
+}
+@endif
+
+
+{{$value}}
+
+
+{{--{{$data->stud_name}}--}}
 
 
 

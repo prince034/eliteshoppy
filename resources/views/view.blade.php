@@ -1,6 +1,9 @@
 <h1>"how are you ?"</h1><br/>
 your name is {{$name}}<br/>
 your city is {{$city}}<br/>
+
+{{$value}}
+
 {{csrf_field()}}
 
 @foreach($data as $student)
