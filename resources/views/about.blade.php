@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <div class="col-md-6 ab_pic_w3ls_text_info">
 				    <h5>About Our Elite <span> Shoppy</span> </h5>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor..</p>
-					<p>Consectetur adipisicing elit, sed do eiusmo,nhhkjhkjhkjd tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+					<p>Consectetur yoyu weihr iewhadipisicing elit, sed do eiusmo,nhhkjhkjhkjd tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
 				</div>
 				  <div class="clearfix"></div>
 			</div>    
