@@ -14,6 +14,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::get('view', ['uses' => 'FormController@dataView']);
+
 Route::group(array('domain' => env('APP_HOST')), function() {
 
 

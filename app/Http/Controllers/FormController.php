@@ -12,7 +12,7 @@ class FormController extends Controller
 
         DB::enableQueryLog();
 
-        $validateData=$request->validate([
+        $request->validate([
             'name'=>'required',
             'city'=>'required',
         ],['name.required'=>'I :attribute am required i m name']);
